@@ -1,0 +1,14 @@
+<%- include('includes/head') %> 
+
+<section class="container">
+  <h1>
+    <%= title %>
+  </h1>
+  <form action="/" method="post">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+  <input type="text" name="nome" id="">
+  </form>
+</section>
+
+
+<%- include('includes/footer') %> 
