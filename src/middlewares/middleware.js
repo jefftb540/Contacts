@@ -1,12 +1,13 @@
 exports.middleware = (req,res,next) => {
-    console.log("At middleware")
+    res.locals.errors = req.flash('errors')
+    res.locals.success = req.flash('success')
     
     next()
 }
 
 exports.checkCsrfToken = (err,req,res,next) => {
-    if (err && 'EBADCSRFTOKEN' === err.code) {
-        return res.render('404', {pageTitle: "Erro"})
+    if (err) {
+        return res.render('404')
     }
     next()
 }

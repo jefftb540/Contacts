@@ -1,13 +1,33 @@
 <%- include('includes/head') %> 
+<%- include('includes/nav') %> 
 
 <section class="container">
-  <h1>
-    <%= title %>
-  </h1>
-  <form action="/" method="post">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-  <input type="text" name="nome" id="">
-  </form>
+ 
+  <div class="flash-message success"></div>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Mail</th>
+          </tr>
+      </thead>
+      <tr>
+          <td>Jefferson Lima</td>
+          <td>+55 84 91234-5679</td>
+          <td>sample@mail.com</td>
+      </tr>
+      <tr>
+          <td>Jefferson Lima</td>
+          <td>+55 84 91234-5679</td>
+          <td>sample@mail.com</td>
+      </tr>
+      <tr>
+          <td>Jefferson Lima</td>
+          <td>+55 84 91234-5679</td>
+          <td>sample@mail.com</td>
+      </tr>
+  </table>
 </section>
 
 
