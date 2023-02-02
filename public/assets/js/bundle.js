@@ -20878,6 +20878,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+setTimeout(function () {
+  document.querySelector('.messages').style.display = "none";
+}, 4000);
 })();
 
 /******/ })()

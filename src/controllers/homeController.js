@@ -1,8 +1,6 @@
 exports.home = (req, res) => {
-    res.render("index.ejs", {
-        title: "Home",
-        pageTitle: "Inicio"
-    })
+    if(!req.session.user) return res.redirect("/login")
+    res.render("index.ejs")
 }
 
 exports.postHome = (req, res) => {
