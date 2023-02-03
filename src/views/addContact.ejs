@@ -1,0 +1,23 @@
+<%- include('includes/head') %> 
+<%- include('includes/nav') %> 
+
+<section class="container">
+    <%- include('includes/messages') %>
+    <% if (contact.id) {%> 
+        <form action="/contacts/edit/<%= contact.id %>" method="post" class="login-form">
+    <% } else { %>
+        <form action="/contacts/add" method="post" class="login-form">
+    <% }%>
+            <label for="name">Nome</label>
+            <input type="text" name="name" value="<%= contact.name %>">
+            <label for="name">Sobrenome</label>
+            <input type="text" name="lastname" value="<%= contact.lastname %>">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" value="<%= contact.email %>">
+            <label for="phone">Telefone</label>
+            <input type="tel" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}" name="phone" value="<%= contact.phone %>"placeholder="(11)11111-1111">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button type="submit">Adicionar</button>
+        </form>
+</section>
+<%- include('includes/footer') %>

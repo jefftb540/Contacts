@@ -7,26 +7,21 @@
   <table class="table">
       <thead>
           <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Mail</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Email</th>
           </tr>
       </thead>
-      <tr>
-          <td>Jefferson Lima</td>
-          <td>+55 84 91234-5679</td>
-          <td>sample@mail.com</td>
-      </tr>
-      <tr>
-          <td>Jefferson Lima</td>
-          <td>+55 84 91234-5679</td>
-          <td>sample@mail.com</td>
-      </tr>
-      <tr>
-          <td>Jefferson Lima</td>
-          <td>+55 84 91234-5679</td>
-          <td>sample@mail.com</td>
-      </tr>
+      <% for( contact of contacts) { %>
+       
+            <tr>
+                <td><%= contact.name%> <%= contact.lastname %></td>
+                <td><%= contact.phone %></td>
+                <td><%= contact.email %></td>
+                <td><a href="/contacts/edit/<%= contact.id %>">Editar</a></td>
+                <td><a href="/contacts/delete/<%= contact.id %>">Apagar</a></td>
+            </tr>
+      <% } %>
   </table>
 </section>
 

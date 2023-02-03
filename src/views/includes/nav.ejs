@@ -1,0 +1,12 @@
+<nav class="nav-bar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <% if(user) { %>
+        <li><a href="/contacts/add">Novo contato</a></li>
+        <li><a href="/logout">Sair</a></li>
+        
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+      <% } %>
+    </ul>
+  </nav>
