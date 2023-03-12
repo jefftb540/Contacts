@@ -1,0 +1,29 @@
+<%- include('includes/head') %> 
+<%- include('includes/nav') %> 
+
+<section class="container">
+ 
+  <%- include('includes/messages') %>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Email</th>
+          </tr>
+      </thead>
+      <% for( contact of contacts) { %>
+       
+            <tr>
+                <td><%= contact.name%> <%= contact.lastname %></td>
+                <td><%= contact.phone %></td>
+                <td><%= contact.email %></td>
+                <td><a href="/contacts/edit/<%= contact.id %>">Editar</a></td>
+                <td><a href="/contacts/delete/<%= contact.id %>">Apagar</a></td>
+            </tr>
+      <% } %>
+  </table>
+</section>
+
+
+<%- include('includes/footer') %> 
